@@ -1,7 +1,7 @@
 const rspack = require("@rspack/core");
 const refreshPlugin = require("@rspack/plugin-react-refresh");
 const isDev = process.env.NODE_ENV === "development";
-const path  =require("path")
+const path = require("path")
 /**
  * @type {import('@rspack/cli').Configuration}
  */
@@ -65,6 +65,11 @@ module.exports = {
 				]
 			}
 		]
+	},
+	devServer:{
+		historyApiFallback: {
+			index: '/index.html',
+		},
 	},
 	plugins: [
 		new rspack.DefinePlugin({
